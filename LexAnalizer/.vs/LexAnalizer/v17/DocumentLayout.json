@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexAnalizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:LexAnalizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:LexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -21,6 +13,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:dfaSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexAnalizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:LexAnalizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\errors.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "dfaSettings.h",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h",
               "RelativeDocumentMoniker": "dfaSettings.h",
@@ -59,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "dfa.cpp",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfa.cpp",
               "RelativeDocumentMoniker": "dfa.cpp",
@@ -72,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "LexicalAnalyzer.h",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h",
               "RelativeDocumentMoniker": "LexicalAnalyzer.h",
@@ -85,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "LexAnalizer.cpp",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexAnalizer.cpp",
               "RelativeDocumentMoniker": "LexAnalizer.cpp",
@@ -98,7 +98,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "input.txt",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\input.txt",
               "RelativeDocumentMoniker": "input.txt",
