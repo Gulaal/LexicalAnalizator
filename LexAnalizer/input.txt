@@ -1,0 +1,7 @@
+PROGRAM Main;
+INTEGER ava = 12;
+INTEGER 1ava = 13;
+INTEGER aa, b1b;
+aa = ava + 45;
+b1b=ava+45;
+END;
