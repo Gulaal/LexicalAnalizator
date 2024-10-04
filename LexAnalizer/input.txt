@@ -1,2 +1,6 @@
 PROGRAM Main;
+INTEGER aa, bb;
+aa = 1;
+bb = aa;
+c = aa.EQ.bb;
 END;
