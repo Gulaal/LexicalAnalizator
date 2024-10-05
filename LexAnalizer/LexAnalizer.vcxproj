@@ -135,7 +135,7 @@
     <ClInclude Include="dfaSettings.h" />
     <ClInclude Include="HashTable.h" />
     <ClInclude Include="LexicalAnalyzer.h" />
-    <ClInclude Include="Tocken.h" />
+    <ClInclude Include="Token.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="errors.txt" />

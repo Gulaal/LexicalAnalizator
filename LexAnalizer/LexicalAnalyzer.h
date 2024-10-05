@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-#include "Tocken.h"
+#include "Token.h"
 #include "dfa.h"
 #include "dfaSettings.h"
 #include "HashTable.h"
@@ -14,33 +14,33 @@ using namespace std;
 class LexicalAnalizer
 {
 private:
-	vector<Tocken> tockenArray;
+	vector<Token> tokenArray;
 
-	void CreateTocken(vector<Tocken>& tockenArray, vector<char> alphabet, string& s)
+	void CreateToken(vector<Token>& tokenArray, vector<char> alphabet, string& s)
 	{
 		if (s.size() != 0)
 		{
 			if (s == "PROGRAM" || s == "END" || s == "INTEGER")
 			{
-				tockenArray.push_back(Tocken(s, "KEYWORD"));
+				tokenArray.push_back(Token(s, "KEYWORD"));
 				s.clear();
 				return;
 			}
 			else if (dfa(countStatesVar, alphabet, finalStatesVar, transitFunctionVar).isAccept(s))
 			{
-				tockenArray.push_back(Tocken(s, "VAR"));
+				tokenArray.push_back(Token(s, "VAR"));
 				s.clear();
 				return;
 			}
 			else if (dfa(countStatesConst, alphabet, finalStatesConst, transitFunctionConst).isAccept(s))
 			{
-				tockenArray.push_back(Tocken(s, "CONST"));
+				tokenArray.push_back(Token(s, "CONST"));
 				s.clear();
 				return;
 			}
 			else if (dfa(countStatesRel, alphabet, finalStatesRel, transitFunctionRel).isAccept(s))
 			{
-				tockenArray.push_back(Tocken(s, "OPER"));
+				tokenArray.push_back(Token(s, "OPER"));
 				s.clear();
 				return;
 			}
@@ -75,30 +75,29 @@ public:
 		char a;
 		string s;
 		int dotCounter = 0;
-		string dotString = "";
 		while (!in.eof())
 		{
 			in.get(a);
 			if (a == ';')
 			{
-				CreateTocken(tockenArray, alphabet, s);
-				tockenArray.push_back(Tocken(";", "SEP"));
+				CreateToken(tokenArray, alphabet, s);
+				tokenArray.push_back(Token(";", "SEP"));
 			}
 			else if (a == ',')
 			{
-				CreateTocken(tockenArray, alphabet, s);
-				tockenArray.push_back(Tocken(",", "SEP"));
+				CreateToken(tokenArray, alphabet, s);
+				tokenArray.push_back(Token(",", "SEP"));
 			}
 			else if (a == ' ')
 			{
-				CreateTocken(tockenArray, alphabet, s);
+				CreateToken(tokenArray, alphabet, s);
 			}
 			else if (a == '+' || a == '-' || a == '=')
 			{
-				CreateTocken(tockenArray, alphabet, s);
+				CreateToken(tokenArray, alphabet, s);
 				string oper = "";
 				oper += a;
-				tockenArray.push_back(Tocken(oper, "OPER"));
+				tokenArray.push_back(Token(oper, "OPER"));
 			}
 			else if (a == '.')
 			{
@@ -106,11 +105,11 @@ public:
 				if (dotCounter == 2)
 				{
 					s += a;
-					CreateTocken(tockenArray, alphabet, s);
+					CreateToken(tokenArray, alphabet, s);
 				}
 				else
 				{
-					CreateTocken(tockenArray, alphabet, s);
+					CreateToken(tokenArray, alphabet, s);
 					s += a;
 				}
 			}
@@ -125,8 +124,8 @@ public:
 		}
 	}
 
-	vector<Tocken> getTockenArray()
+	vector<Token> getTokenArray()
 	{
-		return this->tockenArray;
+		return this->tokenArray;
 	}
 };
