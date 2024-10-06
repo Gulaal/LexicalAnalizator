@@ -70,7 +70,7 @@ public:
 		if (elementCount < size)
 		{
 			Token tokenByIndex = table[hash];
-			if (get(token.getTokenName()) != "")
+			if (tokenByIndex.getTokenName() == token.getTokenName())
 			{
 				return;
 			}
@@ -78,6 +78,10 @@ public:
 			{
 				while (tokenByIndex.getTokenName() != "")
 				{
+					if (tokenByIndex.getTokenName() == token.getTokenName())
+					{
+						return;
+					}
 					hash = (hash + 1) % size;
 					tokenByIndex = table[hash];
 				}
