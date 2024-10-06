@@ -25,10 +25,10 @@ private:
 		Token* newTable = new Token[newSize];
 		for (int i = 0; i < size; i++)
 		{
-			if (!table[i].getTokenName().empty())
+			if (table[i].getTokenName() != "")
 			{
-				int newHash = hashFunc(table[i]);
-				while (!newTable[newHash].getTokenName().empty())
+				int newHash = hashFunc(table[i], newSize);
+				while (newTable[newHash].getTokenName() != "")
 				{
 					newHash = (newHash + 1) % newSize;
 				}
@@ -66,12 +66,14 @@ public:
 		{
 			rehash();
 		}
-		int hash = hashFunc(token);
+		int hash = hashFunc(token, size);
 		if (elementCount < size)
 		{
 			Token tokenByIndex = table[hash];
-			if (tokenByIndex.getTokenName() == token.getTokenName())
+			if (get(token.getTokenName()) != "")
+			{
 				return;
+			}
 			else
 			{
 				while (tokenByIndex.getTokenName() != "")
@@ -86,20 +88,20 @@ public:
 		}
 	}
 
-	int hashFunc(Token& token)
+	int hashFunc(Token& token, int size)
 	{
 		int hash = 0;
 		int power = 1;
 		string tokenName = token.getTokenName();
 		for (char ch : tokenName)
 		{
-			hash = (hash + (ch - 'a' + 1) * power) % this->size;
+			hash = (hash + (ch - 'a' + 1) * power) % size;
 			power = (power * PRIME) % size;
 		}
 		return abs(hash) % size;
 	}
 
-	int hashFunc(const string& str)
+	int hashFunc(const string& str, int size)
 	{
 		int hash = 0;
 		int power = 1;
@@ -108,14 +110,14 @@ public:
 			hash = (hash + (ch - 'a' + 1) * power) % size;
 			power = (power * PRIME) % size;
 		}
-		return hash;
+		return abs(hash) % size;
 	}
 
 	string get(const string& key)
 	{
-		int hash = hashFunc(key);
+		int hash = hashFunc(key, size);
 		int startIndex = hash;
-		while (!table[hash].getTokenName().empty())
+		while (table[hash].getTokenName() != "")
 		{
 			if (table[hash].getTokenName() == key)
 			{
@@ -127,12 +129,12 @@ public:
 				break;
 			}
 		}
-		throw std::out_of_range("Key was not found!");
+		return "";
 	}
 
 	void printHashTable() const
 	{
-		ofstream out("output.txt");
+		std::ofstream out("output.txt");
 		for (int i = 0; i < size; i++)
 		{
 			if (!table[i].getTokenName().empty())

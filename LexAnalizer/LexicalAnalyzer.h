@@ -26,6 +26,18 @@ private:
 				s.clear();
 				return;
 			}
+			else if (dfa(countStatesRel, alphabet, finalStatesRel, transitFunctionRel).isAccept(s))
+			{
+				tokenArray.push_back(Token(s, "REL OPER"));
+				s.clear();
+				return;
+			}
+			else if (dfa(countStatesCond, alphabet, finalStatesCond, transitFunctionCond).isAccept(s))
+			{
+				tokenArray.push_back(Token(s, "COND OPER"));
+				s.clear();
+				return;
+			}
 			else if (dfa(countStatesVar, alphabet, finalStatesVar, transitFunctionVar).isAccept(s))
 			{
 				tokenArray.push_back(Token(s, "VAR"));
@@ -35,12 +47,6 @@ private:
 			else if (dfa(countStatesConst, alphabet, finalStatesConst, transitFunctionConst).isAccept(s))
 			{
 				tokenArray.push_back(Token(s, "CONST"));
-				s.clear();
-				return;
-			}
-			else if (dfa(countStatesRel, alphabet, finalStatesRel, transitFunctionRel).isAccept(s))
-			{
-				tokenArray.push_back(Token(s, "OPER"));
 				s.clear();
 				return;
 			}
@@ -115,7 +121,7 @@ public:
 			}
 			else if (a == '\n')
 			{
-				continue;
+				CreateToken(tokenArray, alphabet, s);
 			}
 			else
 			{

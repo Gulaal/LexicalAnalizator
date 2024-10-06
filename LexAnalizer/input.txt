@@ -1,6 +1,4 @@
-PROGRAM Main;
-INTEGER aa, bb;
-aa = 1;
-bb = aa;
-c = aa.EQ.bb;
-END;
+IF a .EQ. b THEN
+a = a + b;
+ELSE
+a = b;
