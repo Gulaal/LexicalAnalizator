@@ -143,7 +143,7 @@ public:
 		{
 			if (!table[i].getTokenName().empty())
 			{
-				out << setw(10) << i << " |" << table[i].getTokenName() << setw(10) << " |" << table[i].getTokenType() << '\n';
+				out << setw(10) << i << " |" << setw(10) << table[i].getTokenName() << " |" << table[i].getTokenType() << '\n';
 			}
 		}
 	}
