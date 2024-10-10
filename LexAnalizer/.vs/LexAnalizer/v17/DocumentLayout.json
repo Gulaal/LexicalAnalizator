@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:LexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\output.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:output.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\errors.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:errors.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:HashTable.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:dfaSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\input.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:input.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:LexicalAnalyzer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\errors.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:errors.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexAnalizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:LexAnalizer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:Token.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{4240927D-9DDE-44F3-BF40-F5F2FE239230}|LexAnalizer.vcxproj|solutionrelative:dfaSettings.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,86 +42,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "dfaSettings.h",
-              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h",
-              "RelativeDocumentMoniker": "dfaSettings.h",
-              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h",
-              "RelativeToolTip": "dfaSettings.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABpAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-10T12:22:24.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LexicalAnalyzer.h",
-              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h",
-              "RelativeDocumentMoniker": "LexicalAnalyzer.h",
-              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h",
-              "RelativeToolTip": "LexicalAnalyzer.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-10T12:18:17.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "output.txt",
-              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\output.txt",
-              "RelativeDocumentMoniker": "output.txt",
-              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\output.txt",
-              "RelativeToolTip": "output.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-10-10T12:13:53.846Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "errors.txt",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\errors.txt",
               "RelativeDocumentMoniker": "errors.txt",
               "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\errors.txt",
               "RelativeToolTip": "errors.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-10-06T11:10:04.02Z",
+              "WhenOpened": "2024-10-10T15:55:16.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LexAnalizer.cpp",
+              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexAnalizer.cpp",
+              "RelativeDocumentMoniker": "LexAnalizer.cpp",
+              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexAnalizer.cpp",
+              "RelativeToolTip": "LexAnalizer.cpp",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-10T15:53:16.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Token.h",
+              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\Token.h",
+              "RelativeDocumentMoniker": "Token.h",
+              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\Token.h",
+              "RelativeToolTip": "Token.h",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T15:45:51.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "dfaSettings.h",
+              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h",
+              "RelativeDocumentMoniker": "dfaSettings.h",
+              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\dfaSettings.h",
+              "RelativeToolTip": "dfaSettings.h",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAABkAAABZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T12:22:24.64Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "LexicalAnalyzer.h",
+              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h",
+              "RelativeDocumentMoniker": "LexicalAnalyzer.h",
+              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\LexicalAnalyzer.h",
+              "RelativeToolTip": "LexicalAnalyzer.h",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAAAIAAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-10T12:18:17.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "output.txt",
+              "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\output.txt",
+              "RelativeDocumentMoniker": "output.txt",
+              "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\output.txt",
+              "RelativeToolTip": "output.txt",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-10-10T12:13:53.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "HashTable.h",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\HashTable.h",
               "RelativeDocumentMoniker": "HashTable.h",
               "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\HashTable.h",
               "RelativeToolTip": "HashTable.h",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAAAJAAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGEAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-06T10:53:02.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "input.txt",
               "DocumentMoniker": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\input.txt",
               "RelativeDocumentMoniker": "input.txt",
               "ToolTip": "C:\\Users\\egorv\\source\\repos\\LexicalAnalizator\\LexAnalizer\\input.txt",
               "RelativeToolTip": "input.txt",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAKAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2024-10-06T10:52:58.796Z",
               "EditorCaption": ""

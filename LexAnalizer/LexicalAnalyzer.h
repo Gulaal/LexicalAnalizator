@@ -16,7 +16,7 @@ class LexicalAnalizer
 private:
 	vector<Token> tokenArray;
 
-	void CreateToken(vector<Token>& tokenArray, vector<char> alphabet, string& s)
+	void CreateToken(vector<Token>& tokenArray, vector<char>& alphabet, string& s, ofstream& out)
 	{
 		if (s.size() != 0)
 		{
@@ -50,7 +50,6 @@ private:
 				s.clear();
 				return;
 			}
-			ofstream out("errors.txt", ios::app);
 			out << "Неудалось распознать лексему: " << s << '\n';
 			s.clear();
 		}
@@ -81,26 +80,27 @@ public:
 		char a;
 		string s;
 		int dotCounter = 0;
+		ofstream out("errors.txt");
 		while (!in.eof())
 		{
 			in.get(a);
 			if (a == ';')
 			{
-				CreateToken(tokenArray, alphabet, s);
+				CreateToken(tokenArray, alphabet, s, out);
 				tokenArray.push_back(Token(";", "SEP"));
 			}
 			else if (a == ',')
 			{
-				CreateToken(tokenArray, alphabet, s);
+				CreateToken(tokenArray, alphabet, s, out);
 				tokenArray.push_back(Token(",", "SEP"));
 			}
 			else if (a == ' ')
 			{
-				CreateToken(tokenArray, alphabet, s);
+				CreateToken(tokenArray, alphabet, s, out);
 			}
 			else if (a == '+' || a == '-' || a == '=')
 			{
-				CreateToken(tokenArray, alphabet, s);
+				CreateToken(tokenArray, alphabet, s, out);
 				string oper = "";
 				oper += a;
 				tokenArray.push_back(Token(oper, "OPER"));
@@ -111,17 +111,17 @@ public:
 				if (dotCounter == 2)
 				{
 					s += a;
-					CreateToken(tokenArray, alphabet, s);
+					CreateToken(tokenArray, alphabet, s, out);
 				}
 				else
 				{
-					CreateToken(tokenArray, alphabet, s);
+					CreateToken(tokenArray, alphabet, s, out);
 					s += a;
 				}
 			}
 			else if (a == '\n')
 			{
-				CreateToken(tokenArray, alphabet, s);
+				CreateToken(tokenArray, alphabet, s, out);
 			}
 			else
 			{
