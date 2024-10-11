@@ -49,17 +49,6 @@ public:
 		table = new Token[INITIAL_SIZE];
 	}
 
-	HashTable(vector<Token>& tokenArray)
-	{
-		size = INITIAL_SIZE;
-		elementCount = 0;
-		table = new Token[INITIAL_SIZE];
-		for (int i = 0; i < tokenArray.size(); i++)
-		{
-			add(tokenArray[i]);
-		}
-	}
-
 	void add(Token& token)
 	{
 		if (elementCount >= size * 0.75)

@@ -1,6 +1,7 @@
          1 |         a |      VAR
          2 |         b |      VAR
          3 |      THEN |      COND OPER
+         4 |       IFh |      VAR
          5 |         3 |      CONST
          6 |   INTEGER |      KEYWORD
          7 |         1 |      CONST

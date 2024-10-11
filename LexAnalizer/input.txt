@@ -4,4 +4,5 @@ INTEGER b = a
 IF a .EQ. b THEN b = b + 1
 ELSE a = a + 1
 INTEGER b1
-INTEGER b2
+INTEGER 2b
+IFh

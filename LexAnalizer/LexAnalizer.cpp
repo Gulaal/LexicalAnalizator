@@ -15,7 +15,5 @@ int main()
 	// 34 * 2
 	ifstream in("input.txt");
 	LexicalAnalizer A(in);
-	vector<Token> tokenArray = A.getTokenArray();
-	HashTable result(tokenArray);
-	result.printHashTable();
+	A.getHashTable().printHashTable();
 }
