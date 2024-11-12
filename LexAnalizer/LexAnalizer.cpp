@@ -10,9 +10,11 @@
 
 using namespace std;
 
+
+
 int main()
 {
-	// 34 * 2
+	
 	ifstream in("input.txt");
 	LexicalAnalizer A(in);
 	A.getHashTable().printHashTable();

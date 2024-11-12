@@ -131,11 +131,17 @@
     <ClCompile Include="LexAnalizer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BinOperatorNode.h" />
+    <ClInclude Include="ConstNode.h" />
     <ClInclude Include="dfa.h" />
     <ClInclude Include="dfaSettings.h" />
     <ClInclude Include="HashTable.h" />
+    <ClInclude Include="ExpressionNode.h" />
     <ClInclude Include="LexicalAnalyzer.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="StatementsNode.h" />
     <ClInclude Include="Token.h" />
+    <ClInclude Include="VariableNode.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="errors.txt" />

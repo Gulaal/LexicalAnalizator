@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Файлы заголовков\SyntaxTree">
+      <UniqueIdentifier>{c9fe1912-6ba6-483a-86a6-ecfa5658de98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LexAnalizer.cpp">
@@ -37,6 +40,24 @@
     </ClInclude>
     <ClInclude Include="dfaSettings.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionNode.h">
+      <Filter>Файлы заголовков\SyntaxTree</Filter>
+    </ClInclude>
+    <ClInclude Include="StatementsNode.h">
+      <Filter>Файлы заголовков\SyntaxTree</Filter>
+    </ClInclude>
+    <ClInclude Include="VariableNode.h">
+      <Filter>Файлы заголовков\SyntaxTree</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstNode.h">
+      <Filter>Файлы заголовков\SyntaxTree</Filter>
+    </ClInclude>
+    <ClInclude Include="BinOperatorNode.h">
+      <Filter>Файлы заголовков\SyntaxTree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
