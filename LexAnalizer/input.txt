@@ -1,4 +1,5 @@
 PROGRAM main 
 INTEGER x, y
-x = x + 10
+IF x .EQ. y THEN y = x ELSE x = z
+x = (x + 10) - (y + x)
 END main

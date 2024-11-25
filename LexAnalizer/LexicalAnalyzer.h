@@ -131,6 +131,15 @@ public:
 			}
 			else if (a == '(' || a == ')')
 			{
+				if (a == '(')
+				{
+					s = '(';
+				}
+				else
+				{
+					CreateToken(alphabet, s, out);
+					s = ')';
+				}
 				CreateToken(alphabet, s, out);
 			}
 			else if (a == '+' || a == '-' || a == '=')

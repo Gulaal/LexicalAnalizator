@@ -129,6 +129,8 @@
   <ItemGroup>
     <ClCompile Include="dfa.cpp" />
     <ClCompile Include="LexAnalizer.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Parser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinOperatorNode.h" />

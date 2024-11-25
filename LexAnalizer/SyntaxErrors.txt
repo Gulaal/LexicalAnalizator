@@ -1,0 +1,3 @@
+Wrong symbol in 18 position in tokens
+Expected token type: REL OPER
+Resieved token type: COND OPER

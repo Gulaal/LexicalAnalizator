@@ -1,56 +1,9 @@
 #include "Parser.h"
+#include "fstream"
+#include "Token.h"
+#include "Node.h"
 
-bool Parser::isNumber(string s)
-{
-	int state = 0;
-	for (char c : s)
-	{
-		if (state == 0 && c == '0')
-			state = 4;
-		else if ((state == 0 || state == 1)
-			&& isdigit(c))
-			state = 1;
-		else if ((state == 1 || state == 4) &&
-			c == '.')
-			state = 2;
-		else if ((state == 2 || state == 3)
-			&& isdigit(c))
-			state = 3;
-		else
-			return false;
-	}
-	return (state == 1 || state == 3 || state == 4);
-}
-
-void Parser::getLexeme()
-{
-	if (i >= input.length())
-	{
-		lexeme = "#";
-		return;
-	}
-	lexeme = "";
-	if (input[i] == '+' || input[i] == '-' ||
-		input[i] == '*' || input[i] == '/' ||
-		input[i] == '^' || input[i] == '(' ||
-		input[i] == ')')
-	{
-		lexeme += input[i];
-		i++;
-	}
-	else
-	{
-		while (i < input.length() &&
-			!(input[i] == '+' || input[i] == '-' ||
-				input[i] == '*' || input[i] == '/' ||
-				input[i] == '^' || input[i] == '(' ||
-				input[i] == ')'))
-		{
-			lexeme += input[i];
-			i++;
-		}
-	}
-}
+using namespace std;
 
 void Parser::match(const string& s)
 {
@@ -60,43 +13,111 @@ void Parser::match(const string& s)
 	}
 	else
 	{
-		throw exception("Wrong input");
+		ofstream out("SyntaxErrors.txt");
+		out << "Wrong symbol in " << i << " position in tokens" << endl
+			<< "Expected token type: " + s << endl << "Resieved token type: " << tokens[i].getTokenType();
+		exit(1);
 	}
 }
 
-void Parser::Parse()
+void Parser::match_name(const string& s)
 {
-	Node root("start");
-	Begin();
-	Descriptions();
-	Operators();
-	End();
+	if (tokens[i].getTokenName() == s)
+	{
+		i++;
+	}
+	else
+	{
+		throw exception("Wrong input");
+		exit(1);
+	}
+}
+
+Parser::Parser(vector<Token>& tokens)
+{
+	this->tokens = tokens;
+}
+
+Node Parser::Parse()
+{
+	Node root("Begin");
+	Begin(root);
+	return root;
 }
 
 void Parser::Begin(Node& n)
 {
-	n.addSon("Begin");
 	match("KEYWORD");
-	n.getSon(0).addSon("Id");
-	Id(n.getSon(1));
+	n.addSon("PROGRAM");
+	Id(n.getSon(0));
+	n.addSon("Descriptions");
+	Descriptions(n.getSon(1));
+	n.addSon("Operators");
+	Operators(n.getSon(2));
+	n.addSon("End");
+	End(n.getSon(3));
 }
 
 void Parser::End(Node& n)
 {
-	n.addSon("End");
 	match("KEYWORD");
-	n.getSon(0).addSon("Id");
+	n.addSon(tokens[i].getTokenName());
 	match("VAR");
 }
 
 void Parser::Descriptions(Node& n)
 {
-	n.addSon("Descriptions");
-	Descr(n.getSon(0));
-	while (tokens[i].getTokenName() != "END" && tokens[i].getTokenType() != "VAR")
+	Descr(n);
+	while (tokens[i].getTokenName() != "END" && tokens[i].getTokenType() != "VAR" && tokens[i].getTokenType() != "COND OPER")
 	{
-		Descr(n.getSon(0));
+		Descr(n);
 	}
+}
+
+void Parser::Operators(Node& n)
+{
+	n.addSon("Op");
+	Op(n.getSon(0));
+	while (tokens[i].getTokenName() != "END" && tokens[i].getTokenName() != "ELSE")
+	{
+		Op(n.getSon(0));
+	}
+}
+
+void Parser::Op(Node& n)
+{
+	if (tokens[i].getTokenType() == "VAR")
+	{
+		match("VAR");
+		n.addSon(tokens[i - 1].getTokenName());
+		match("OPER");
+		n.addSon(tokens[i - 1].getTokenName());
+		n.addSon("Expr");
+		Expr(n.getSon(2));
+	}
+	else if (tokens[i].getTokenType() == "COND OPER")
+	{
+		match("COND OPER");
+		n.addSon("IF");
+		Condition(n.getSon(0));
+		n.addSon("THEN");
+		match_name("THEN");             
+		Operators(n.getSon(1));
+		if (tokens[i].getTokenName() == "ELSE")
+		{
+			match("COND OPER");
+			n.addSon("ELSE");
+			Operators(n.getSon(2));
+		}
+
+	}
+}
+
+void Parser::Condition(Node& n)
+{
+	Expr(n);
+	RelationOperators(n);
+	Expr(n);
 }
 
 void Parser::Descr(Node& n)
@@ -105,8 +126,8 @@ void Parser::Descr(Node& n)
 	Type(n.getSon(0));
 	n.addSon("VarList");
 	VarList(n.getSon(1));
-
 }
+
 void Parser::Type(Node& n)
 {
 	n.addSon("INTEGER");
@@ -115,216 +136,61 @@ void Parser::Type(Node& n)
 
 void Parser::VarList(Node& n)
 {
-	n.addSon("Id");
-	Id(n.getSon(0));
-	while()
+	Id(n);
+	while (tokens[i].getTokenType() == "SEP")
+	{
+		match("SEP");
+		Id(n);
+	}
+}
+
+void Parser::RelationOperators(Node& n)
+{
+	match("REL OPER");
+	n.addSon(tokens[i - 1].getTokenName());
+}
+
+void Parser::Expr(Node& n)
+{
+	SimpleExpr(n);
+	while (tokens[i].getTokenType() == "OPER")
+	{
+		match("OPER");
+		n.addSon(tokens[i - 1].getTokenName());
+		Expr(n);
+	}
+}
+
+void Parser::SimpleExpr(Node& n)
+{
+	n.addSon("SimpleExpr");
+	if (tokens[i].getTokenType() == "VAR")
+	{
+		Id(n);
+	}
+	else if (tokens[i].getTokenType() == "CONST")
+	{
+		Const(n);
+	}
+	else if (tokens[i].getTokenType() == "LEFT PAR")
+	{
+		match("LEFT PAR");
+		n.addSon("(");
+		Expr(n);
+		match("RIGHT PAR");
+		n.addSon(")");
+	}
 }
 
 void Parser::Id(Node& n)
 {
 	match("VAR");
+	n.addSon(tokens[i-1].getTokenName());
 }
 
 void Parser::Const(Node& n)
 {
 	match("CONST");
+	n.addSon(tokens[i-1].getTokenName());
 }
 
-void Parser::S(Node& n)
-{
-	if (isNumber(lexeme) || lexeme == "x" ||
-		lexeme == "(" || lexeme == "sin" ||
-		lexeme == "cos" || lexeme == "exp" ||
-		lexeme == "log")
-	{
-		// S -> TS1
-		n.addSon("T");
-		T(n.getSon(0));
-		n.addSon("S1");
-		S1(n.getSon(1));
-		exit();
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::S1(Node& n)
-{
-	if (lexeme == "+")
-	{
-		// S1 -> +TS1
-		n.addSon("+");
-		getLexeme();
-		n.addSon("T");
-		T(n.getSon(1));
-		n.addSon("S1");
-		S1(n.getSon(2));
-	}
-	else if (lexeme == "-")
-	{
-		// S1 -> -TS1
-		n.addSon("-");
-		getLexeme();
-		n.addSon("T");
-		T(n.getSon(1));
-		n.addSon("S1");
-		S1(n.getSon(2));
-	}
-	else if (lexeme == ")" || lexeme == "#")
-	{
-		// S1 -> eps;
-		n.addSon("eps");
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::T(Node& n)
-{
-	if (isNumber(lexeme) || lexeme == "x" ||
-		lexeme == "(" || lexeme == "sin" ||
-		lexeme == "cos" || lexeme == "exp" ||
-		lexeme == "log")
-	{
-		// T -> FT1
-		n.addSon("F");
-		F(n.getSon(0));
-		n.addSon("T1");
-		T1(n.getSon(1));
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::T1(Node& n)
-{
-	if (lexeme == "*")
-	{
-		// T1 -> *FT1
-		n.addSon("*");
-		getLexeme();
-		n.addSon("F");
-		F(n.getSon(1));
-		n.addSon("T1");
-		T1(n.getSon(2));
-	}
-	else if (lexeme == "/")
-	{
-		// T1 -> /FT1
-		n.addSon("/");
-		getLexeme();
-		n.addSon("F");
-		F(n.getSon(1));
-		n.addSon("T1");
-		T1(n.getSon(2));
-	}
-	else if (lexeme == ")" || lexeme == "#" ||
-		lexeme == "+" || lexeme == "-")
-	{
-		// T1 -> eps;
-		n.addSon("eps");
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::F(Node& n)
-{
-	if (isNumber(lexeme) || lexeme == "x" ||
-		lexeme == "(" || lexeme == "sin" ||
-		lexeme == "cos" || lexeme == "exp" ||
-		lexeme == "log")
-	{
-		// F -> AF1
-		n.addSon("A");
-		A(n.getSon(0));
-		n.addSon("F1");
-		F1(n.getSon(1));
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::F1(Node& n)
-{
-	if (lexeme == "^")
-	{
-		// F1 -> ^AF1
-		n.addSon("^");
-		getLexeme();
-		n.addSon("A");
-		A(n.getSon(1));
-		n.addSon("F1");
-		F1(n.getSon(2));
-	}
-	else if (lexeme == "+" || lexeme == "-" ||
-		lexeme == "*" || lexeme == "/" ||
-		lexeme == ")" || lexeme == "#")
-	{
-		// F1 -> eps;
-		n.addSon("eps");
-	}
-	else throw exception("Wrong input");
-}
-
-void Parser::A(Node& n)
-{
-	if (isNumber(lexeme))
-	{
-		// A -> num
-		n.addSon(lexeme);
-		getLexeme();
-	}
-	else if (lexeme == "x")
-	{
-		// A -> x
-		n.addSon("x");
-		getLexeme();
-	}
-	else if (lexeme == "(")
-	{
-		n.addSon("(");
-		getLexeme();
-		n.addSon("S");
-		S(n.getSon(1));
-		if (lexeme == ")")
-		{
-			n.addSon(")");
-			getLexeme();
-		}
-		else throw exception("Wrong input");
-	}
-	else if (lexeme == "sin" || lexeme == "cos" ||
-		lexeme == "log" || lexeme == "exp")
-	{
-		// A -> f(S)
-		n.addSon(lexeme);
-		getLexeme();
-		if (lexeme == "(")
-		{
-			n.addSon("(");
-			getLexeme();
-			n.addSon("S");
-			S(n.getSon(2));
-			if (lexeme == ")")
-			{
-				n.addSon(")");
-				getLexeme();
-			}
-			else throw exception("Wrong input");
-		}
-		else throw exception("Wrong input");
-	}
-	else throw exception("Wrong input");
-}
-
-Parser::Parser(string inp)
-{
-	input = inp;
-	i = 0;
-}
-
-Node Parser::parse()
-{
-	Node root("S");
-	getLexeme();
-	S(root);
-	if (lexeme != "#")
-		throw exception("Wrong input");
-	return root;
-}
