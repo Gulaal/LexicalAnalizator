@@ -1,54 +1,35 @@
 #pragma once
-#include "Token.h"
-#include "ExpressionNode.h"
-#include "StatementsNode.h"
+#include "Node.h"
+#include <iostream>
 #include <string>
-#include <vector>
-
-
+using namespace std;
 class Parser
 {
 private:
-	vector<string> tokenTypes;
+	string input, lexeme;
+	int i;
+	int str;
 	vector<Token> tokens;
-	int pos;
 
+	bool isNumber(string s);
+	void getLexeme();
+	void match(const string& s);
+	void Parse();
+	void Begin(Node& n);
+	void Descriptions(Node& n);
+	void Descriptions1(Node& n);
+	void Operators(Node& n);
+	void End(Node& n);
+	void Id(Node& n);
+	void S(Node& n);
+	void S1(Node& n);
+	void T(Node& n);
+	void T1(Node& n);
+	void F(Node& n);
+	void F1(Node& n);
+	void A(Node& n);
 public:
-
-	Parser(vector<Token> tokens)
-	{
-		this->tokens = tokens;
-		this->pos = 0;
-	}
-	
-	Token match(string first...)
-	{
-		string* pFirst = &first;
-		if (this->pos < this->tokens.size())
-		{
-			Token currentToken = this->tokens[this->pos];
-			
-		}
-	}
-
-	Token require()
-	{
-
-	}
-
-	void parseExpression()
-	{
-
-	}
-
-	StatementsNode parseCode()
-	{
-		StatementsNode root;
-		while (this->pos < this->tokens.size())
-		{
-			parseExpression();
-		}
-		return root;
-	}
-
+	Parser(string inp);
+	Node parse();
 };
+

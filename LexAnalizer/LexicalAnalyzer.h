@@ -25,6 +25,23 @@ private:
 			{
 				Token token = Token(s, "KEYWORD");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
+				s.clear();
+				return;
+			}
+			else if (s == "(")
+			{
+				Token token = Token(s, "LEFT PAR");
+				tokenHashTable.add(token);
+				tokenArray.push_back(token);
+				s.clear();
+				return;
+			}
+			else if (s == ")")
+			{
+				Token token = Token(s, "RIGHT PAR");
+				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 				s.clear();
 				return;
 			}
@@ -32,6 +49,7 @@ private:
 			{
 				Token token = Token(s, "REL OPER");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 				s.clear();
 				return;
 			}
@@ -39,6 +57,7 @@ private:
 			{
 				Token token = Token(s, "COND OPER");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 				s.clear();
 				return;
 			}
@@ -46,6 +65,7 @@ private:
 			{
 				Token token = Token(s, "VAR");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 				s.clear();
 				return;
 			}
@@ -53,6 +73,7 @@ private:
 			{
 				Token token = Token(s, "CONST");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 				s.clear();
 				return;
 			}
@@ -62,9 +83,9 @@ private:
 	}
 
 public:
-
+	vector<Token> tokenArray;
 	LexicalAnalizer(ifstream& in)
-	{
+	{	
 		vector<char> alphabet;
 		for (char c = 'a'; c <= 'z'; c++)
 		{
@@ -95,14 +116,20 @@ public:
 				CreateToken(alphabet, s, out);
 				Token token = Token(";", "SEP");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 			}
 			else if (a == ',')
 			{
 				CreateToken(alphabet, s, out);
 				Token token = Token(",", "SEP");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 			}
 			else if (a == ' ')
+			{
+				CreateToken(alphabet, s, out);
+			}
+			else if (a == '(' || a == ')')
 			{
 				CreateToken(alphabet, s, out);
 			}
@@ -113,11 +140,12 @@ public:
 				oper += a;
 				Token token = Token(oper, "OPER");
 				tokenHashTable.add(token);
+				tokenArray.push_back(token);
 			}
 			else if (a == '.')
 			{
 				dotCounter++;
-				if (dotCounter == 2)
+				if (dotCounter % 2 == 0)
 				{
 					s += a;
 					CreateToken(alphabet, s, out);
@@ -143,4 +171,6 @@ public:
 	{
 		return this->tokenHashTable;
 	}
+
+
 };

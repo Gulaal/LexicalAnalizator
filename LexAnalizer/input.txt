@@ -1,8 +1,4 @@
-PROGRAM Main
-INTEGER a = 3
-INTEGER b = a
-IF a .EQ. b THEN b = b + 1
-ELSE a = a + 1
-INTEGER b1
-INTEGER 2b
-IFh
+PROGRAM main 
+INTEGER x, y
+x = x + 10
+END main
