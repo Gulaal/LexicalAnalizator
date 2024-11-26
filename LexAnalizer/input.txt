@@ -1,5 +1,6 @@
 PROGRAM main 
-INTEGER x, y
-IF x .EQ. y THEN y = x ELSE x = z
-x = (x + 10) - (y + x)
+INTEGER x, y, z
+IF x .EQ. y THEN z = x ELSE x = x
+x = (x + 5) - x
+IF x .GE. 3 THEN x = x + 5
 END main

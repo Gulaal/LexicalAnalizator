@@ -9,8 +9,7 @@ using namespace std;
 class Node
 {
 private:
-	string data;
-	vector<Node> children;
+	
 public:
 	Node(string s);
 	void addSon(string s);
@@ -18,5 +17,7 @@ public:
 	void addSon(Node& n);
 	Node& getSon(int i);
 	void print(int lvl);
+	string data;
+	vector<Node> children;
 };
 

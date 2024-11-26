@@ -1,3 +1,4 @@
-Wrong symbol in 18 position in tokens
-Expected token type: REL OPER
-Resieved token type: COND OPER
+Wrong symbol in 0 position in tokens
+Expected token name: PROGRAM
+Received token type: KEYWORD
+Received token name: END
