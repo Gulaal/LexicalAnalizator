@@ -1,0 +1,18 @@
+PROGRAM main DECL
+INTEGER x y z DECL
+INTEGER x y z DECL
+x y .EQ. m1 BF 
+z x = 
+m1 DEFL
+z x y + 13 10 x + + - = 
+x 3 .GE. m2 BF 
+x x 5 + = 
+m2 DEFL
+x x 5 + = 
+x 3 .GE. m3 BF 
+x x 5 + = 
+m3 DEFL
+x x 5 + = 
+x 3 .GE. m4 BF 
+x x 5 + = 
+END main

@@ -11,6 +11,7 @@ class Node
 private:
 	
 public:
+	Node() = default;
 	Node(string s);
 	void addSon(string s);
 	void change_data(string s);
@@ -18,6 +19,7 @@ public:
 	Node& getSon(int i);
 	void print(int lvl);
 	string data;
+	string type;
 	vector<Node> children;
 };
 

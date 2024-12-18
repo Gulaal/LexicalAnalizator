@@ -1,4 +1,2 @@
-﻿  Parser.cpp
-C:\Users\egorv\source\repos\LexicalAnalizator\LexAnalizer\Parser.cpp(84,32): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
-C:\Users\egorv\source\repos\LexicalAnalizator\LexAnalizer\Parser.cpp(88,33): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+﻿  LexAnalizer.cpp
   LexAnalizer.vcxproj -> C:\Users\egorv\source\repos\LexicalAnalizator\LexAnalizer\x64\Debug\LexAnalizer.exe

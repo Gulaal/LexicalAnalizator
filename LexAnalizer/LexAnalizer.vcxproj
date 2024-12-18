@@ -141,6 +141,7 @@
     <ClInclude Include="ExpressionNode.h" />
     <ClInclude Include="LexicalAnalyzer.h" />
     <ClInclude Include="Parser.h" />
+    <ClInclude Include="SemanticAnalyze.h" />
     <ClInclude Include="StatementsNode.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="VariableNode.h" />

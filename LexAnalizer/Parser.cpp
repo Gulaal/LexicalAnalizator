@@ -40,6 +40,7 @@ void Parser::match_name(const string& s)
 Parser::Parser(vector<Token>& tokens)
 {
 	this->tokens = tokens;
+	this->i = 0;
 }
 
 Node Parser::Parse()
@@ -71,10 +72,12 @@ void Parser::End(Node& n)
 
 void Parser::Descriptions(Node& n)
 {
-	Descr(n);
+	n.addSon("Descr");
+	Descr(n.getSon(n.children.size() - 1));
 	while (tokens[i].getTokenName() != "END" && tokens[i].getTokenType() != "VAR" && tokens[i].getTokenType() != "COND OPER")
 	{
-		Descr(n);
+		n.addSon("Descr");
+		Descr(n.getSon(n.children.size() - 1));
 	}
 }
 
@@ -97,7 +100,8 @@ void Parser::Op(Node& n)
 		n.addSon(tokens[i - 1].getTokenName());
 		match_name("=");
 		n.addSon(tokens[i - 1].getTokenName());
-		Expr(n);
+		n.addSon("Expr");
+		Expr(n.getSon(2));
 	}
 	else if (tokens[i].getTokenType() == "COND OPER")
 	{
@@ -106,19 +110,19 @@ void Parser::Op(Node& n)
 		Condition(n.getSon(0));
 		match_name("THEN");
 		n.addSon("THEN");             
-		Op(n.getSon(1));
+		Operators(n.getSon(1));
 		if (tokens[i].getTokenName() == "ELSE")
 		{
 			match("COND OPER");
 			n.addSon("ELSE");
-			Op(n.getSon(2));
+			Operators(n.getSon(2));
 		}
-
 	}
 }
 
 void Parser::Condition(Node& n)
 {
+
 	Expr(n);
 	RelationOperators(n);
 	Expr(n);
@@ -126,10 +130,10 @@ void Parser::Condition(Node& n)
 
 void Parser::Descr(Node& n)
 {
-	n.addSon("Type");
+	n.addSon("TYPE");
 	Type(n.getSon(0));
-	n.addSon("VarList");
-	VarList(n.getSon(1));
+
+	VarList(n.getSon(0));
 }
 
 void Parser::Type(Node& n)
@@ -156,13 +160,14 @@ void Parser::RelationOperators(Node& n)
 
 void Parser::Expr(Node& n)
 {
-
-	SimpleExpr(n);
+	n.addSon("SimpleExpr");
+	SimpleExpr(n.getSon(0));
 	while (tokens[i].getTokenType() == "OPER" )
 	{
 		match("OPER");
 		n.addSon(tokens[i - 1].getTokenName());
-		Expr(n);
+		n.addSon("Expr");
+		Expr(n.getSon(n.children.size() - 1));
 	}
 }
 
@@ -180,9 +185,16 @@ void Parser::SimpleExpr(Node& n)
 	{
 		match("LEFT PAR");
 		n.addSon("(");
-		Expr(n);
+		n.addSon("Expr");
+		Expr(n.getSon(1));
 		match("RIGHT PAR");
 		n.addSon(")");
+	}
+	else
+	{
+		ofstream out("SyntaxErrors.txt");
+		out << "Error";
+		exit(1);
 	}
 }
 

@@ -1,6 +1,18 @@
 PROGRAM main 
 INTEGER x, y, z
-IF x .EQ. y THEN z = x ELSE x = x
-x = (x + 5) - x
-IF x .GE. 3 THEN x = x + 5
+INTEGER x,y,z
+IF x .EQ. y THEN 
+z = x 
+ELSE 
+z = (x + y) - 13 + (10 + x)
+IF x .GE. 3 THEN 
+x = x + 5
+ELSE
+x = x + 5
+IF x .GE. 3 THEN 
+x = x + 5
+ELSE
+x = x + 5
+IF x .GE. 3 THEN 
+x = x + 5
 END main

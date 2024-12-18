@@ -65,6 +65,9 @@
     <ClInclude Include="BinOperatorNode.h">
       <Filter>Файлы заголовков\SyntaxTree</Filter>
     </ClInclude>
+    <ClInclude Include="SemanticAnalyze.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt">

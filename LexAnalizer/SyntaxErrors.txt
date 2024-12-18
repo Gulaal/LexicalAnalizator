@@ -1,4 +1,4 @@
-Wrong symbol in 0 position in tokens
-Expected token name: PROGRAM
-Received token type: KEYWORD
-Received token name: END
+Wrong symbol in 21 position in tokens
+Expected token name: =
+Received token type: OPER
+Received token name: +
